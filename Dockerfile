@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y wget
 RUN wget -c -O formplayer.jar \
     https://jenkins.dimagi.com/job/formplayer/lastStableBuild/artifact/build/libs/formplayer.jar
 
-COPY config/application.docker.properties /formplayer/application.properties
+COPY config/env.properties /formplayer/application.properties
 COPY config/set_webhost /formplayer/
 
 EXPOSE 8010
