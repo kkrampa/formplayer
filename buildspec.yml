@@ -6,6 +6,7 @@ phases:
     - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD 
   build:
     commands:
+      - echo "Building"
       - docker build -t kkrampa/formplayer:$CODEBUILD_RESOLVED_SOURCE_VERSION .
   post_build:
     commands:
