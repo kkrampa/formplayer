@@ -1,0 +1,10 @@
+phases:
+  pre_build:
+    commands:
+    - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD 
+  build:
+    commands:
+      - docker build -t kkrampa/formplayer:$CODEBUILD_BUILD_ID .
+  post_build:
+    commands:
+      - docker push kkrampa/formplayer:$CODEBUILD_BUILD_ID
