@@ -2,6 +2,10 @@ kind: pipeline
 name: default
 
 steps:
+  - name: pull submodules
+    image: docker:git
+    commands:
+    - git submodule update --depth 5 --init --recursive
 - name: formplayer docker build
   image: plugins/docker
   settings:
